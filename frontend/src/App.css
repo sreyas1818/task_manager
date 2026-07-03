@@ -297,13 +297,28 @@ button{
         margin:20px auto;
     }
 
-    .dashboard-header,
-    .task-header,
-    .filters,
-    .title-row{
-        flex-direction:column;
-        align-items:stretch;
-    }
+    ..dashboard-header,
+.task-header,
+.title-row{
+    flex-direction:column;
+    align-items:stretch;
+}
+
+.filters{
+    display:grid;
+    grid-template-columns:1fr 1fr auto;
+    gap:10px;
+    align-items:center;
+}
+
+.filters select{
+    width:100%;
+    min-width:0;
+}
+
+.filters button{
+    width:110px;
+}
 
     .header-buttons{
         display:flex;
@@ -316,12 +331,10 @@ button{
         flex:1;
     }
 
-    .filters select,
-    .filters button,
     .save-btn,
     .back-btn,
     .ai-btn{
-        width:100%;
+    width:100%;
     }
 
     .task-card,
