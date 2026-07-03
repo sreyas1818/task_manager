@@ -297,7 +297,7 @@ button{
         margin:20px auto;
     }
 
-    ..dashboard-header,
+    .dashboard-header,
 .task-header,
 .title-row{
     flex-direction:column;
@@ -305,19 +305,21 @@ button{
 }
 
 .filters{
-    display:grid;
-    grid-template-columns:1fr 1fr auto;
+    display:flex;
+    flex-direction:row;
     gap:10px;
     align-items:center;
+    flex-wrap:nowrap;
 }
 
 .filters select{
-    width:100%;
+    flex:1;
     min-width:0;
 }
 
 .filters button{
-    width:110px;
+    width:100px;
+    flex-shrink:0;
 }
 
     .header-buttons{
