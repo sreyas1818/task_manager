@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
-
+import API_URL from "../config";
 function Login() {
 
     const navigate = useNavigate();
@@ -24,7 +24,7 @@ function Login() {
 
         e.preventDefault();
 
-        fetch("http://127.0.0.1:8000/login", {
+        fetch(`${API_URL}/login`, {
 
             method: "POST",
 

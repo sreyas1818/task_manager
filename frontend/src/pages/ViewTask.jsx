@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import "../App.css";
-
+import API_URL from "../config";
 function ViewTask() {
 
     const { id } = useParams();
@@ -10,7 +10,7 @@ function ViewTask() {
 
     useEffect(() => {
 
-        fetch(`http://127.0.0.1:8000/tasks/${id}`, {
+        fetch(`${API_URL}/tasks/${id}`, {
 
     headers: {
 

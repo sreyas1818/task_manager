@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
-
+import API_URL from "../config";
 function Dashboard() {
 
   const [tasks, setTasks] = useState([]);
@@ -11,7 +11,7 @@ function Dashboard() {
 
   function loadTasks() {
 
-    let url = "http://127.0.0.1:8000/tasks";
+    let url = `${API_URL}/tasks`;
 
     const params = [];
 
@@ -65,7 +65,7 @@ function Dashboard() {
         return;
     }
 
-    fetch(`http://127.0.0.1:8000/tasks/${id}`, {
+    fetch(`${API_URL}/tasks/${id}`, {
     method: "DELETE",
     headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`

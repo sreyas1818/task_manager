@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "../App.css";
-
+import API_URL from "../config";
 function EditTask() {
 
     const { id } = useParams();
@@ -18,7 +18,7 @@ function EditTask() {
 
     useEffect(() => {
 
-        fetch(`http://127.0.0.1:8000/tasks/${id}`, {
+        fetch(`${API_URL}/tasks/${id}`, {
 
     headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -65,7 +65,7 @@ function EditTask() {
 
         e.preventDefault();
 
-        fetch(`http://127.0.0.1:8000/tasks/${id}`, {
+        fetch(`${API_URL}/tasks/${id}`, {
 
             method: "PUT",
 

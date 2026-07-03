@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
+import API_URL from "../config";
 
 function CreateTask() {
 
@@ -40,7 +41,7 @@ function CreateTask() {
 
     }
 
-    fetch("http://127.0.0.1:8000/ai/suggest", {
+    fetch(`${API_URL}/ai/suggest`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -68,7 +69,7 @@ function CreateTask() {
 
         e.preventDefault();
 
-        fetch("http://127.0.0.1:8000/tasks", {
+        fetch(`${API_URL}/tasks`, {
     method: "POST",
     headers: {
         "Content-Type": "application/json",
