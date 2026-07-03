@@ -108,7 +108,25 @@ pip install -r requirements.txt
 
 py -m uvicorn main:app --reload
 ```
+## Environment Variables
 
+Create a `.env` file inside the `backend` directory.
+
+Add the following variable:
+
+```env
+GROQ_API_KEY=your_groq_api_key
+DB_HOST=
+DB_PORT=
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
+
+```
+
+You can obtain a free API key from the Groq Developer Console.
+
+The application uses this key to generate AI-powered task descriptions and priority suggestions.
 ---
 
 ## Frontend
