@@ -10,7 +10,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
-        "https://task-manager-9eu20ltwz-sreyas1.vercel.app"
+        "https://task-manager-xbwv73qdf-sreyas1.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
