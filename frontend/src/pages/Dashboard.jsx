@@ -109,22 +109,22 @@ useEffect(() => {
 
     <h1>Task Dashboard</h1>
 
-    <div>
+    <div className="header-buttons">
 
-        <Link to="/create">
-            <button className="create-btn">
-                + Create Task
-            </button>
-        </Link>
-
-        <button
-            className="logout-btn"
-            onClick={logout}
-        >
-            Logout
+    <Link to="/create">
+        <button className="create-btn">
+            + Create Task
         </button>
+    </Link>
 
-    </div>
+    <button
+        className="logout-btn"
+        onClick={logout}
+    >
+        Logout
+    </button>
+
+</div>
 
 </div>
 
