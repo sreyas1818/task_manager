@@ -83,11 +83,13 @@ h1{
 .table-container{
     width:100%;
     overflow-x:auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
 }
 
 table{
     width:100%;
-    min-width:900px;
+    min-width:1000px;
     border-collapse:collapse;
     background:#fff;
     border-radius:12px;
@@ -108,8 +110,8 @@ thead th{
 tbody td{
     padding:18px;
     border-bottom:1px solid #edf2f7;
+    vertical-align:middle;
 }
-
 tbody tr:hover{
     background:#f8fbff;
 }
@@ -303,18 +305,24 @@ button{
         align-items:stretch;
     }
 
-    .filters select,
-    .filters button,
-    .create-btn,
-    .logout-btn,
-    .save-btn,
-    .back-btn,
-    .ai-btn,
-    .edit-btn,
-    .delete-btn{
+    .header-buttons{
+        display:flex;
+        flex-direction:row;
         width:100%;
+        gap:10px;
     }
 
+    .header-buttons button{
+        flex:1;
+    }
+
+    .filters select,
+    .filters button,
+    .save-btn,
+    .back-btn,
+    .ai-btn{
+        width:100%;
+    }
 
     .task-card,
     .form-card{
@@ -322,7 +330,7 @@ button{
     }
 
     table{
-        min-width:700px;
+        min-width:1000px;
     }
 
     .detail-box{

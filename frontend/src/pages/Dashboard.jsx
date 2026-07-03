@@ -156,88 +156,90 @@ useEffect(() => {
 
       </div>
 
-      <table>
+      <div className="table-container">
+
+    <table>
 
         <thead>
 
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Due Date</th>
-            <th>Priority</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Due Date</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
 
         </thead>
 
         <tbody>
 
-          {tasks.map(task => (
+            {tasks.map(task => (
 
-            <tr key={task.id}>
+                <tr key={task.id}>
 
-              <td>{task.id}</td>
+                    <td>{task.id}</td>
 
-              <td>
-    <Link to={`/task/${task.id}`}>
-        {task.title}
-    </Link>
-</td>
+                    <td>
+                        <Link to={`/task/${task.id}`}>
+                            {task.title}
+                        </Link>
+                    </td>
 
-              <td>{task.description}</td>
+                    <td>{task.description}</td>
 
-              <td>{task.due_date}</td>
+                    <td>{task.due_date}</td>
 
-              <td>
-    <span
-        className={`priority-${task.priority.toLowerCase()}`}
-    >
-        {task.priority}
-    </span>
-</td>
-<td>
-    <span
-        className={
-            task.status === "To Do"
-                ? "status-todo"
-                : task.status === "In Progress"
-                ? "status-progress"
-                : "status-done"
-        }
-    >
-        {task.status}
-    </span>
-</td>
+                    <td>
+                        <span className={`priority-${task.priority.toLowerCase()}`}>
+                            {task.priority}
+                        </span>
+                    </td>
 
-<td>
+                    <td>
+                        <span
+                            className={
+                                task.status === "To Do"
+                                    ? "status-todo"
+                                    : task.status === "In Progress"
+                                    ? "status-progress"
+                                    : "status-done"
+                            }
+                        >
+                            {task.status}
+                        </span>
+                    </td>
 
-    <div className="actions">
+                    <td>
+                        <div className="actions">
 
-        <Link to={`/edit/${task.id}`}>
-            <button className="edit-btn">
-                Edit
-            </button>
-        </Link>
+                            <Link to={`/edit/${task.id}`}>
+                                <button className="edit-btn">
+                                    Edit
+                                </button>
+                            </Link>
 
-        <button
-            className="delete-btn"
-            onClick={() => deleteTask(task.id)}
-        >
-            Delete
-        </button>
+                            <button
+                                className="delete-btn"
+                                onClick={() => deleteTask(task.id)}
+                            >
+                                Delete
+                            </button>
 
-    </div>
+                        </div>
+                    </td>
 
-</td>
-            </tr>
+                </tr>
 
-          ))}
+            ))}
 
         </tbody>
 
-      </table>
+    </table>
+
+</div>
 
     </div>
   );
